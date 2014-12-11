@@ -1,0 +1,11 @@
+{
+  "name": "DMEC-Expeditie-Prototype",
+  "version": "0.0.1",
+  "description": "Het DMEC project prototype \"Expeditie\" van groep 3.",
+  "main": "app.js",
+  "private": true,
+  "scripts": {},
+  "author": "",
+  "dependencies": {
+  }
+}
