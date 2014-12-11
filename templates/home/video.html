@@ -1,0 +1,19 @@
+<script src="js/mediaelement/mediaelement-and-player.min.js"></script>
+<link rel="stylesheet" href="js/mediaelement/mediaelementplayer.css"/>
+
+<figure class="info-video">
+	<video width="640" height="360" id="player1" preload="none" style="margin: 0 auto">
+		<source type="video/youtube" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
+	</video>
+	<figcaption>
+		<img src="img/info-video-preview.jpg">
+	</figcaption>
+</figure>
+
+<script>
+var infoVideo = $('video,audio').mediaelementplayer().data('mediaelementplayer');
+$('.info-video figcaption').click(function () {
+	infoVideo.play();
+	$(this).hide();
+});
+</script>

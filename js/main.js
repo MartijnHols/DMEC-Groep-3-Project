@@ -4,7 +4,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.when('/iets', {
 		templateUrl: 'templates/iets.html'
 	}).otherwise({
-		templateUrl: 'templates/index.html'
+		templateUrl: 'templates/home/index.html'
 	});
 }]);
 

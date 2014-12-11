@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>
+    <link href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -21,9 +22,12 @@
 <body ng-controller="main">
 
 <div class="container">
-    Hello {{who}}
-    <div ng-view>
-    </div>
+    <header>
+        <img src="http://radboudreshapecenter.com/wp-content/themes/H5/images/radboud_logo.png" width="200">
+        <h1>I-dee (Prototype)</h1>
+    </header>
+
+    <div ng-view></div>
 </div>
 
 </body>
