@@ -6,10 +6,10 @@
 
 <h1>Artikelen</h1>
 
-<article ng-repeat="articles">
+<article ng-repeat="article in articles">
 	<header>
-		<h1>Titel</h1>
+		<h3>{{article.title}}</h3>
 	</header>
 
-	Content
+	<span ng-bind-html="article.text"></span>
 </article>
