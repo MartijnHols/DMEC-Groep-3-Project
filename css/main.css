@@ -13,7 +13,7 @@ figure.info-video {
 	position: relative;
 	width: 640px;
 	height: 360px;
-	margin: 0 auto;
+	margin: 0 auto 30px;
 }
 figure.info-video figcaption {
 	position: absolute;
@@ -26,12 +26,41 @@ figure.info-video figcaption {
 figure.info-video figcaption img {
 	max-width: 100%;
 }
+figure.info-video .button-close {
+	position: absolute;
+	top: 0;
+	right: -37px;
+	font-size: 32px;
+	line-height: 32px;
+	cursor: pointer;
+}
 .call-to-action {
 	width: 100%;
-	margin: 30px;
+	margin: 0 30px 30px;
 	text-align: center;
 }
 .call-to-action button {
 	font-size: 3em;
 	padding: 0.4em 0.8em;
+}
+.articles {
+	width: 100%;
+}
+article {
+	max-width: 300px;
+	max-height: 500px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	float: left;
+	margin: 10px;
+}
+article:hover {
+	background: rgba(0, 0, 0, 0.01);
+}
+article * {
+	max-width: 100%;
+}
+article header h3 {
+	margin-top: 0;
+	cursor: pointer;
 }

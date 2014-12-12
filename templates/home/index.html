@@ -1,15 +1,17 @@
-<ng-include src="'templates/home/video.html'"></ng-include>
+<ng-include src="'templates/home/video.html'" ng-show="videoClosed != true"></ng-include>
 
 <div class="call-to-action">
 	<button type="button" class="btn btn-success btn-lg center-block">Ik heb een I-dee!</button>
 </div>
 
-<h1>Artikelen</h1>
+<section class="articles">
+	<h1>Artikelen</h1>
 
-<article ng-repeat="article in articles">
-	<header>
-		<h3>{{article.title}}</h3>
-	</header>
+	<article ng-repeat="article in articles">
+		<header>
+			<h3>{{article.title}}</h3>
+		</header>
 
-	<span ng-bind-html="article.text"></span>
-</article>
+		<span ng-bind-html="article.text"></span>
+	</article>
+</section>
