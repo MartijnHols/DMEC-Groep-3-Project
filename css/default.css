@@ -9,3 +9,6 @@ body {
     max-width: 960px;
     padding: 0;
 }
+* {
+    box-sizing: border-box;
+}

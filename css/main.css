@@ -1,12 +1,12 @@
 .container > header img {
-	margin: 30px 0;
+	margin: 20px 0;
 	width: 200px;
 	height: 65px;
 }
 .container > header h1 {
-	margin: 30px;
-	display: inline;
-	line-height: 65px;
+	margin: 10px 30px;
+	display: inline-block;
+	line-height: 1em;
 	font-size: 4em;
 }
 figure.info-video {
@@ -36,7 +36,7 @@ figure.info-video .button-close {
 }
 .call-to-action {
 	width: 100%;
-	margin: 0 30px 30px;
+	margin: 30px;
 	text-align: center;
 }
 .call-to-action button {
@@ -51,8 +51,8 @@ article {
 	max-height: 500px;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	float: left;
 	margin: 10px;
+	display: inline-block;
 }
 article:hover {
 	background: rgba(0, 0, 0, 0.01);
