@@ -34,3 +34,46 @@ figure.info-video .button-close {
 .articles {
 	width: 100%;
 }
+.articles article {
+	padding: 15px;
+}
+.articles .box1 {
+	min-height: 215px !important;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.21);
+	border-radius: 3px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.articles .box1 header:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0);
+	transition: background .2s;
+}
+.articles .box1:hover header:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+}
+.articles .box1 header {
+	position: relative;
+	width: 100%;
+	min-height: 200px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center
+}
+.articles .box1 > div.title {
+	font-size: 1.5em;
+	padding: 15px;
+	height: 6em;
+	overflow: hidden;
+}
