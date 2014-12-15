@@ -1,15 +1,15 @@
-<ng-include src="'templates/home/video.html'" ng-show="videoClosed != true"></ng-include>
-
 <section class="articles">
 	<h1>Artikelen</h1>
 
-	<article ng-repeat="article in articles">
+	<div class="row">
+	<article ng-repeat="article in articles" class="col-md-4">
 		<header>
 			<h3>{{article.title}}</h3>
 		</header>
 
 		<span ng-bind-html="article.text"></span>
 	</article>
+	</div>
 </section>
 
 <div class="call-to-action">

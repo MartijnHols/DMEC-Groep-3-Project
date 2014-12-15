@@ -11,20 +11,8 @@
 }
 figure.info-video {
 	position: relative;
-	width: 640px;
-	height: 360px;
-	margin: 0 auto 30px;
-}
-figure.info-video figcaption {
-	position: absolute;
-	left: 0;
-	top: 0;
 	width: 100%;
 	height: 100%;
-	cursor: pointer;
-}
-figure.info-video figcaption img {
-	max-width: 100%;
 }
 figure.info-video .button-close {
 	position: absolute;
@@ -45,22 +33,4 @@ figure.info-video .button-close {
 }
 .articles {
 	width: 100%;
-}
-article {
-	max-width: 300px;
-	max-height: 500px;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	margin: 10px;
-	display: inline-block;
-}
-article:hover {
-	background: rgba(0, 0, 0, 0.01);
-}
-article * {
-	max-width: 100%;
-}
-article header h3 {
-	margin-top: 0;
-	cursor: pointer;
 }
