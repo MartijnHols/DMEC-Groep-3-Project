@@ -15,6 +15,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-cookies.js"></script>
+    <script src="js/mediaelement/mediaelement-and-player.min.js"></script>
+    <link rel="stylesheet" href="js/mediaelement/mediaelementplayer.css"/>
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/main.css">
@@ -22,7 +24,25 @@
 
 <body ng-controller="main">
 
-<header style="background-image:url({{headerImage}});"></header>
+<header style="background-image:url({{headerImage}});" class="expanded">
+    <figure class="info-video">
+        <video width="640" height="360" preload="none">
+            <source type="video/youtube" src="https://www.youtube.com/watch?v=OhdUivs72zE"/>
+        </video>
+    </figure>
+
+    <script>
+        var infoVideo = $('.info-video video').mediaelementplayer().data('mediaelementplayer');
+        $('body > header').click(function () {
+            $(this).css({
+                'background-image': '',
+                'background': '#222'
+            });
+            $('.info-video').addClass('playing');
+            infoVideo.play();
+        });
+    </script>
+</header>
 
 <div class="container">
     <div ng-view></div>
