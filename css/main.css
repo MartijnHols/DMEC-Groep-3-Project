@@ -43,6 +43,7 @@ figure.info-video .button-close {
 	border-radius: 3px;
 	overflow: hidden;
 	cursor: pointer;
+	background: #fff;
 }
 .articles .box1 header:before {
 	content: '';
