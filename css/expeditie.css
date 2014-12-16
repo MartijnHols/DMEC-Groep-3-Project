@@ -14,6 +14,29 @@ body {
     position: relative;
     z-index: 1;
 }
+.profile {
+    position: relative;
+    top: 5px;
+}
+.profile img {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    float: left;
+    margin-right: 15px;
+}
+.profile div {
+    text-shadow: 2px 2px 5px #000;
+}
+.profile .naam {
+    padding-top: 12px;
+    font-size: 22px;
+}
+.profile .opleiding {
+    font-size: 18px;
+}
+
 nav {
     content: '';
     position: fixed;
