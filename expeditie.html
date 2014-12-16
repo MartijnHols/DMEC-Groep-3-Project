@@ -33,12 +33,7 @@
 
     <nav role="navigation">
         <ul class="nav navbar-nav container">
-            <li class="col-md-2"><i class="fa fa-lightbulb-o"></i>Concept</li>
-            <li class="col-md-2 active"><i class="fa fa-compass"></i>Expeditie</li>
-            <li class="col-md-2"><i class="fa fa-lightbulb-o"></i>Groepsgenoten</li>
-            <li class="col-md-2"><i class="fa fa-calendar"></i>Planning</li>
-            <li class="col-md-2"><i class="fa fa-file-text"></i>Documenten</li>
-            <li class="col-md-2"><i class="fa fa-wechat"></i>Contact</li>
+            <li class="col-md-2" ng-class="{active: activePage == item.name}" ng-repeat="item in menu"><i class="fa {{item.icon}}"></i>{{item.name}}</li>
         </ul>
     </nav>
 </div>

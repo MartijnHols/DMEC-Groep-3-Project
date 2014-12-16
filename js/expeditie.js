@@ -11,9 +11,36 @@ app.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 app.controller('main', function ($scope) {
-
+	$scope.menu = [
+		{
+			icon: 'fa-lightbulb-o',
+			name: 'Concept'
+		},
+		{
+			icon: 'fa-compass',
+			name: 'Expeditie'
+		},
+		{
+			icon: 'fa-lightbulb-o',
+			name: 'Groepsgenoten'
+		},
+		{
+			icon: 'fa-calendar',
+			name: 'Planning'
+		},
+		{
+			icon: 'fa-file-text',
+			name: 'Documenten'
+		},
+		{
+			icon: 'fa-wechat',
+			name: 'Contact'
+		}
+	];
 });
 app.controller('groepsgenoten', function ($scope) {
+	$scope.$parent.activePage = 'Groepsgenoten';
+
 	$scope.groepsgenoten = [
 		{
 			naam: 'Yvonne Geraats',
