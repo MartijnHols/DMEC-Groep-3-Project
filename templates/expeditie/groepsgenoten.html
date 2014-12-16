@@ -1,12 +1,17 @@
 <div class="box col-md-8">
     <div class="title">Groepsgenoten</div>
-    <div class="content">
-        <div ng-repeat="groepsgenoot in groepsgenoten" class="groepsgenoot col-md-4">
+    <div class="content row">
+        <div ng-repeat="groepsgenoot in groepsgenoten" class="groepsgenoot col-md-6">
             <img ng-src="{{groepsgenoot.foto}}">
 
             <div class="naam">{{groepsgenoot.naam}}</div>
             <div class="opleiding">{{groepsgenoot.opleiding.naam}}, {{groepsgenoot.opleiding.jaar}}e jaar</div>
-            <div class="beschrijving">{{groepsgenoot.beschrijving}}</div>
+            <div class="omschrijving">{{groepsgenoot.omschrijving}}</div>
+
+            <div>
+                <i class="fa fa-video-camera"></i>
+                <i class="fa fa-comments"></i>
+            </div>
         </div>
     </div>
 </div>

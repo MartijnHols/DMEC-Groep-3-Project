@@ -67,11 +67,37 @@ body {
     text-align: center;
 }
 .box .content {
-    max-height: 300px;
+    max-height: 50vh;
+    min-height: 300px;
     overflow: auto;
 }
 
 .groepsgenoot {
+    font-size: 18px;
+}
+.groepsgenoot:nth-child(odd) {
+    clear: left;
+}
+.groepsgenoot img {
+    float: left;
+}
+.groepsgenoot div {
+    padding-left: 90px;
+}
+.groepsgenoot .naam {
+    font-size: 22px;
+    padding-top: 13px;
+    line-height: 1em;
+}
+.groepsgenoot .omschrijving {
+    padding-top: 1em;
+    font-size: 14px;
+    font-style: italic;
+}
+.groepsgenoot .fa {
+    font-size: 24px;
+    padding-top: .6em;
+    cursor: pointer;
 }
 
 nav {
