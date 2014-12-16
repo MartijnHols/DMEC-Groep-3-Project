@@ -4,7 +4,7 @@
     src: local('bignoodletitling'), url('fonts/bignoodletitling.woff') format('woff'), url('fonts/bignoodletitling.ttf') format('truetype');
 }
 body {
-    background: url(../img/bgs/opdracht1.jpg) no-repeat center center;
+    background: url(../img/bgs/2.jpg) no-repeat center center;
     background-size: cover;
     width: 100%;
     height: 100vh;
