@@ -1,0 +1,12 @@
+<div class="box col-md-8">
+    <div class="title">Groepsgenoten</div>
+    <div class="content">
+        <div ng-repeat="groepsgenoot in groepsgenoten" class="groepsgenoot col-md-4">
+            <img ng-src="{{groepsgenoot.foto}}">
+
+            <div class="naam">{{groepsgenoot.naam}}</div>
+            <div class="opleiding">{{groepsgenoot.opleiding.naam}}, {{groepsgenoot.opleiding.jaar}}e jaar</div>
+            <div class="beschrijving">{{groepsgenoot.beschrijving}}</div>
+        </div>
+    </div>
+</div>

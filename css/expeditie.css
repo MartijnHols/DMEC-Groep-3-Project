@@ -36,6 +36,43 @@ body {
 .profile .opleiding {
     font-size: 18px;
 }
+.groepsgenoot img {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.box {
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+.box:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -7px;
+    left: -7px;
+    right: -7px;
+    bottom: -7px;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+.box .title {
+    font-size: 52px;
+    font-family: 'bignoodletitling';
+    text-align: center;
+}
+.box .content {
+    max-height: 300px;
+    overflow: auto;
+}
+
+.groepsgenoot {
+}
 
 nav {
     content: '';
