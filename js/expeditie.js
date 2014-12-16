@@ -1,16 +1,37 @@
 var app = angular.module('expeditie', ['ngRoute', 'ngSanitize', 'ngCookies']);
 
 app.config(['$routeProvider', function ($routeProvider) {
-	$routeProvider.when('/iets', {
-		templateUrl: 'templates/iets.html',
-		controller: 'iets'
-	}).otherwise({
-		templateUrl: 'templates/expeditie/groepsgenoten.html',
-		controller: 'groepsgenoten'
-	});
+	$routeProvider
+		.when('/concept', {
+			templateUrl: 'templates/expeditie/concept.html',
+			controller: 'concept'
+		})
+		.when('/expeditie', {
+			templateUrl: 'templates/expeditie/expeditie.html',
+			controller: 'expeditie'
+		})
+		.when('/groepsgenoten', {
+			templateUrl: 'templates/expeditie/groepsgenoten.html',
+			controller: 'groepsgenoten'
+		})
+		.when('/planning', {
+			templateUrl: 'templates/expeditie/planning.html',
+			controller: 'planning'
+		})
+		.when('/documenten', {
+			templateUrl: 'templates/expeditie/documenten.html',
+			controller: 'documenten'
+		})
+		.when('/contact', {
+			templateUrl: 'templates/expeditie/contact.html',
+			controller: 'contact'
+		})
+		.otherwise({
+			redirectTo: '/concept'
+		});
 }]);
 
-app.controller('main', function ($scope) {
+app.controller('main', function ($scope, $location) {
 	$scope.menu = [
 		{
 			icon: 'fa-lightbulb-o',
@@ -37,9 +58,22 @@ app.controller('main', function ($scope) {
 			name: 'Contact'
 		}
 	];
+	$scope.navigateTo = function (pageName) {
+		$location.path('/' + pageName);
+	};
+});
+app.controller('concept', function ($scope, $location) {
+	$scope.$parent.activePage = 'concept';
+
+	//TODO: Implement
+});
+app.controller('expeditie', function ($scope, $location) {
+	$scope.$parent.activePage = 'expeditie';
+
+	//TODO: Implement
 });
 app.controller('groepsgenoten', function ($scope) {
-	$scope.$parent.activePage = 'Groepsgenoten';
+	$scope.$parent.activePage = 'groepsgenoten';
 
 	$scope.groepsgenoten = [
 		{
@@ -96,4 +130,19 @@ app.controller('groepsgenoten', function ($scope) {
 	$('.box .content').niceScroll({
 		autohidemode: false
 	});
+});
+app.controller('planning', function ($scope, $location) {
+	$scope.$parent.activePage = 'planning';
+
+	//TODO: Implement
+});
+app.controller('documenten', function ($scope, $location) {
+	$scope.$parent.activePage = 'documenten';
+
+	//TODO: Implement
+});
+app.controller('contact', function ($scope, $location) {
+	$scope.$parent.activePage = 'contact';
+
+	//TODO: Implement
 });
