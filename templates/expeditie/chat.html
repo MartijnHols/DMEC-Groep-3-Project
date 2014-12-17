@@ -1,6 +1,6 @@
 <div ng-controller="chat">
     <div class="chat-box" ng-repeat="gesprek in gesprekken" ng-class="{closed: gesprek.closed}">
-        <div class="title">
+        <div class="title" ng-click="gesprek.closed=!gesprek.closed">
             <i class="status" ng-class="{online: gesprek.online,offline: !gesprek.online}"></i>
             <i class="fa fa-user"></i>
             <a>{{gesprek.naam}}</a>
