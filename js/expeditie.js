@@ -127,9 +127,18 @@ app.controller('groepsgenoten', function ($scope) {
 			omschrijving: 'Ontwikkeling van websites (webapps en mobiele websites) van begin tot eind, waaronder het overleg met klanten, design opleveren, programmeren en de daadwerkelijke oplevering. Hierbij ontwikkel ik mijzelf door steeds gebruik te maken van de meest recente webtechnieken.'
 		}
 	];
-	$('.box .content').niceScroll({
-		autohidemode: false
-	});
+
+	var ns = $('.groepsgenoten .content').getNiceScroll();
+	if (ns.length) {
+		ns.show();
+	} else {
+		$('.groepsgenoten .content').niceScroll({
+			autohidemode: false
+		});
+		$scope.$on('$destroy', function () {
+			$('.groepsgenoten .content').getNiceScroll().hide();
+		});
+	}
 });
 app.controller('planning', function ($scope, $location) {
 	$scope.$parent.activePage = 'planning';
