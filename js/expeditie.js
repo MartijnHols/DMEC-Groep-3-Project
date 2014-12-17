@@ -59,7 +59,9 @@ app.controller('main', function ($scope, $location) {
 		}
 	];
 
-	$scope.achtergronden = [];
+	$scope.achtergronden = [
+		'img/bgs/1.jpg'
+	];
 
 	$scope.navigateTo = function (pageName) {
 		$location.path('/' + pageName);
