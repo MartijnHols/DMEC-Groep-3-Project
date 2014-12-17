@@ -72,8 +72,39 @@ app.controller('expeditie', function ($scope, $location) {
 
 	$scope.opdrachten = [
 		{
+			nr: 1,
 			naam: 'Teamwork',
 			beschrijving: 'Leer je groep kennen door middel van een Project Start Up.'
+		},
+		{
+			nr: 2,
+			naam: 'Gebruikersonderzoek',
+			beschrijving: 'Bestudeer je concept en bepaal een doelgroep.'
+		},
+		{
+			nr: 3,
+			naam: 'Meet the people',
+			beschrijving: 'Ga naar je doelgroep en onderzoek hun behoeften.'
+		},
+		{
+			nr: 4,
+			naam: 'Divergeren',
+			beschrijving: 'Verzamel inspitatie uit onverwachte hoeken. Gebruik de divergatiemethoden.'
+		},
+		{
+			nr: 5,
+			naam: 'Survivor',
+			beschrijving: 'Kies het beste idee aan de hand van één of meerdere convergatiemethodes.'
+		},
+		{
+			nr: 6,
+			naam: 'Build, test, repeat',
+			beschrijving: 'Maak je eerste versie van het idee, test het en maak één of meerdere verbeterslagen.'
+		},
+		{
+			nr: 7,
+			naam: 'Eindpresentatie',
+			beschrijving: 'Overtuig de jury dat jullie het gouden ei hebben gevonden.'
 		}
 	];
 
