@@ -183,3 +183,27 @@ nav ul li i.fa {
     padding:10px 0;
     color:#000;
 }
+
+.plus-icon {
+    position: absolute;
+    top:37%;
+    left:44%;
+    font-size: 18px;
+}
+
+.list-group, .list-group-item, .list-group-item:first-child, .list-group-item:last-child {
+    border-radius: 0px;
+    border:none;
+}
+
+.list-group {
+    padding:0 0 50px 0;
+}
+
+a.list-group-item {
+    line-height: 0px;
+    font-size: 20px;
+    color:#000;
+    padding: 15px 15px;
+    margin:0 0 2px 0;
+}
