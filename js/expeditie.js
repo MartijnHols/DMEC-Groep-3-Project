@@ -70,6 +70,13 @@ app.controller('concept', function ($scope, $location) {
 app.controller('expeditie', function ($scope, $location) {
 	$scope.$parent.activePage = 'expeditie';
 
+	$scope.opdrachten = [
+		{
+			naam: 'Teamwork',
+			beschrijving: 'Leer je groep kennen door middel van een Project Start Up.'
+		}
+	];
+
 	//TODO: Implement
 });
 app.controller('groepsgenoten', function ($scope) {
