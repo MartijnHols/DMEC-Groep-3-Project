@@ -71,8 +71,10 @@ app.controller('main', function ($scope, $location) {
 		// Op dit punt is data-anchor-target="#opdracht{{$index}" nog niet omgezet naar de uiteindelijk waarde,
 		// volgende frame wel, dus wacht even
 		setTimeout(function () {
-			skrollr.init().refresh();
-		}, 0);
+			skrollr.init({
+				smoothScrollingDuration: 400
+			}).refresh();
+		}, 200);
 	};
 
 	//$(document.body).scrollator({
@@ -90,7 +92,10 @@ app.controller('expeditie', function ($scope, $location) {
 	$scope.$parent.achtergronden = [
 		'img/bgs/1.jpg',
 		'img/bgs/2.jpg',
-		'img/bgs/3.jpg'
+		'img/bgs/3.jpg',
+		'img/bgs/4.jpg',
+		'img/bgs/5.jpg',
+		'img/bgs/6.jpg'
 	];
 
 	$scope.opdrachten = [
