@@ -61,6 +61,8 @@ app.controller('main', function ($scope, $location) {
 	$scope.navigateTo = function (pageName) {
 		$location.path('/' + pageName);
 	};
+
+	$(document.body).scrollator();
 });
 app.controller('concept', function ($scope, $location) {
 	$scope.$parent.activePage = 'concept';
@@ -108,7 +110,9 @@ app.controller('expeditie', function ($scope, $location) {
 		}
 	];
 
-	//TODO: Implement
+	$scope.applyScrollbar = function () {
+		$(document.body).data('scrollator').refresh();
+	};
 });
 app.controller('groepsgenoten', function ($scope) {
 	$scope.$parent.activePage = 'groepsgenoten';
@@ -166,17 +170,15 @@ app.controller('groepsgenoten', function ($scope) {
 		}
 	];
 
-	var ns = $('.groepsgenoten .content').getNiceScroll();
-	if (ns.length) {
-		ns.show();
-	} else {
-		$('.groepsgenoten .content').niceScroll({
-			autohidemode: false
-		});
+	$scope.applyScrollbar = function () {
+		// Wacht op de eerstvolgende frame: dan is pas de daadwerkelijke grote bekend
+		setTimeout(function () {
+		$('.groepsgenoten .content').scrollator();
+		}, 0);
 		$scope.$on('$destroy', function () {
-			$('.groepsgenoten .content').getNiceScroll().hide();
+			$('.groepsgenoten .content').data('scrollator').destroy();
 		});
-	}
+	};
 });
 app.controller('planning', function ($scope, $location) {
 	$scope.$parent.activePage = 'planning';
@@ -192,4 +194,18 @@ app.controller('contact', function ($scope, $location) {
 	$scope.$parent.activePage = 'contact';
 
 	//TODO: Implement
+});
+
+app.filter('reverse', function() {
+	return function(items) {
+		return items.slice().reverse();
+	};
+});
+
+app.directive('repeatDone', function() {
+	return function(scope, element, attrs) {
+		if (scope.$last) { // all are rendered
+			scope.$eval(attrs.repeatDone);
+		}
+	}
 });
