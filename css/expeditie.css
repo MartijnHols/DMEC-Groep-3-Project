@@ -4,15 +4,35 @@
     src: local('bignoodletitling'), url('fonts/bignoodletitling.woff') format('woff'), url('fonts/bignoodletitling.ttf') format('truetype');
 }
 body {
-    background: url(../img/bgs/2.jpg) no-repeat fixed center center;
+    /*background: url(../img/bgs/3.jpg) no-repeat center 200vh,*/
+    /*url(../img/bgs/2.jpg) no-repeat center 100vh,*/
+    /*url(../img/bgs/1.jpg) no-repeat center 0;*/
+    /*background: url(../img/bgs/2.jpg) no-repeat center center;*/
     background-size: cover;
     width: 100%;
-    height: 100vh;
     color: #fff;
 }
 .container {
     position: relative;
     z-index: 1;
+}
+
+.backgrounds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.backgrounds > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 nav {
@@ -118,7 +138,7 @@ nav ul li i.fa {
     min-height: 300px;
 }
 .opdracht {
-    top: 30vh;
+    margin-top: 30vh;
 }
 
 .opdracht .beschrijving {

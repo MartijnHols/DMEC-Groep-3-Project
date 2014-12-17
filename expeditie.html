@@ -18,6 +18,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-cookies.js"></script>
     <script src="js/mediaelement/mediaelement-and-player.min.js"></script>
     <script src="js/fm.scrollator.min.js"></script>
+    <script src="http://martijnhols.nl/js/skrollr.js"></script>
     <link rel="stylesheet" href="js/mediaelement/mediaelementplayer.css"/>
     <script src="js/expeditie.js"></script>
     <link rel="stylesheet" href="css/default.css">
@@ -25,6 +26,13 @@
 </head>
 
 <body ng-controller="main">
+
+<div class="backgrounds">
+    <div style="background-image:url({{item}});" ng-repeat="item in achtergronden"
+         data-anchor-target="#opdracht{{$index}}"
+         data-bottom-top="top: 100vh;" data-top="opacity: 1; top: 0vh;" data-top-bottom="opacity:0;"
+         repeat-done="applySkrollr()"></div>
+</div>
 
 <div class="container">
     <ng-include src="'templates/expeditie/navigatie.html'"></ng-include>

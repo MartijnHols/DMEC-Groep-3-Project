@@ -58,13 +58,24 @@ app.controller('main', function ($scope, $location) {
 			name: 'Contact'
 		}
 	];
+
+	$scope.achtergronden = [];
+
 	$scope.navigateTo = function (pageName) {
 		$location.path('/' + pageName);
 	};
 
-	$(document.body).scrollator({
-		zIndex: '2'
-	});
+	$scope.applySkrollr = function () {
+		// Op dit punt is data-anchor-target="#opdracht{{$index}" nog niet omgezet naar de uiteindelijk waarde,
+		// volgende frame wel, dus wacht even
+		setTimeout(function () {
+			skrollr.init().refresh();
+		}, 0);
+	};
+
+	//$(document.body).scrollator({
+	//	zIndex: '2'
+	//});
 });
 app.controller('concept', function ($scope, $location) {
 	$scope.$parent.activePage = 'concept';
@@ -74,19 +85,28 @@ app.controller('concept', function ($scope, $location) {
 app.controller('expeditie', function ($scope, $location) {
 	$scope.$parent.activePage = 'expeditie';
 
+	$scope.$parent.achtergronden = [
+		'img/bgs/1.jpg',
+		'img/bgs/2.jpg',
+		'img/bgs/3.jpg'
+	];
+
 	$scope.opdrachten = [
 		{
 			nr: 1,
+			achtergrond: 'img/bgs/1.jpg',
 			naam: 'Teamwork',
 			beschrijving: 'Leer je groep kennen door middel van een Project Start Up.'
 		},
 		{
 			nr: 2,
+			achtergrond: 'img/bgs/2.jpg',
 			naam: 'Gebruikersonderzoek',
 			beschrijving: 'Bestudeer je concept en bepaal een doelgroep.'
 		},
 		{
 			nr: 3,
+			achtergrond: 'img/bgs/3.jpg',
 			naam: 'Meet the people',
 			beschrijving: 'Ga naar je doelgroep en onderzoek hun behoeften.'
 		},
@@ -113,7 +133,7 @@ app.controller('expeditie', function ($scope, $location) {
 	];
 
 	$scope.applyScrollbar = function () {
-		$(document.body).data('scrollator').refresh();
+		//$(document.body).data('scrollator').refresh();
 	};
 });
 app.controller('groepsgenoten', function ($scope) {
