@@ -1,0 +1,5 @@
+<nav role="navigation">
+    <ul class="nav navbar-nav container">
+        <li class="col-md-2" ng-class="{active: activePage == item.name.toLowerCase()}" ng-repeat="item in menu" ng-click="navigateTo(item.name.toLowerCase())"><i class="fa {{item.icon}}"></i>{{item.name}}</li>
+    </ul>
+</nav>

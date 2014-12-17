@@ -10,6 +10,14 @@ body {
     box-sizing: border-box;
 }
 
+a, a:active, a:visited {
+    color: inherit;
+    cursor: pointer;
+}
+a:hover {
+    color: #014CB6;
+}
+
 /**
  * Scrollator jQuery Plugin
  * Scrollator is a jQuery-based replacement for the browsers scroll bar, which doesn't use any space.
@@ -22,7 +30,6 @@ body {
     left: 0;
     width: 0;
     height: 0;
-    z-index: 2;
 }
 
 .scrollator {

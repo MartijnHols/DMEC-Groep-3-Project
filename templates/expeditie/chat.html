@@ -1,0 +1,116 @@
+<div ng-controller="chat">
+    <div class="chat-box" ng-repeat="gesprek in gesprekken" ng-class="{closed: gesprek.closed}">
+        <div class="title">
+            <i class="status" ng-class="{online: gesprek.online,offline: !gesprek.online}"></i>
+            <i class="fa fa-user"></i>
+            <a>{{gesprek.naam}}</a>
+        </div>
+        <div class="content">
+            <div ng-repeat="bericht in gesprek.berichten" ng-class="{mymessage: !bericht.zender}" repeat-done="scrollDown()">
+                <img ng-src="{{bericht.zenderFoto}}">
+                <div class="zender">{{bericht.zender}}</div>
+                <div class="bericht">{{bericht.bericht}}</div>
+            </div>
+        </div>
+        <div class="message">
+            <textarea placeholder="schrijf bericht.." ng-keypress="sendMessage($event)"></textarea>
+            <i class="fa fa-smile-o"></i>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+.chat-box {
+    position: fixed;
+    bottom: 70px;
+    right: 0;
+    width: 240px;
+}
+.chat-box:nth-child(2) {
+    right: 250px;
+}
+.chat-box.closed .title {
+    background: #6d6968;
+}
+.chat-box.closed .content {
+    display: none;
+}
+.chat-box.closed .message {
+    display: none;
+}
+.chat-box .title {
+    width: 100%;
+    padding: 5px 10px;
+    height: 33px;
+    font-size: 16px;
+    line-height: 23px;
+    background: #00b6d6;
+}
+.chat-box .title i {
+    float: right;
+    margin-left: 5px;
+    margin-right: 3px;
+    font-size: 20px;
+    line-height: 23px;
+}
+.chat-box .title .status {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-top: 4px;
+}
+.chat-box .title .status.online {
+    background: #03dd00;
+}
+.chat-box .title .status.offline {
+    background: red;
+}
+.chat-box .content {
+    width: 100%;
+    height: 185px;
+    background: #cfcfcf;
+    font-size: 12px;
+    padding: 5px;
+    overflow: hidden;
+}
+.chat-box .content > div {
+    padding: 3px;
+    border-bottom: 1px solid #fff;
+    clear: both;
+    min-height: 38px;
+}
+.chat-box .content > div img {
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-right: 6px;
+}
+.chat-box .content > div .zender {
+    color: #003f93;
+    font-weight: bold;
+}
+.chat-box .content > div .bericht {
+    color: #000;
+}
+.chat-box .message {
+    position: relative;
+    width: 100%;
+    height: 33px;
+    background: #fff;
+}
+.chat-box .message textarea {
+    width: 90%;
+    height: 100%;
+    border: 0;
+    font-size: 16px;
+    padding: 5px;
+    resize: none;
+    outline: 0;
+}
+.chat-box .message > i {
+    color: #837f7c;
+    font-size: 16px;
+    line-height: 33px;
+}
+</style>

@@ -62,7 +62,9 @@ app.controller('main', function ($scope, $location) {
 		$location.path('/' + pageName);
 	};
 
-	$(document.body).scrollator();
+	$(document.body).scrollator({
+		zIndex: '2'
+	});
 });
 app.controller('concept', function ($scope, $location) {
 	$scope.$parent.activePage = 'concept';
@@ -173,7 +175,9 @@ app.controller('groepsgenoten', function ($scope) {
 	$scope.applyScrollbar = function () {
 		// Wacht op de eerstvolgende frame: dan is pas de daadwerkelijke grote bekend
 		setTimeout(function () {
-		$('.groepsgenoten .content').scrollator();
+		$('.groepsgenoten .content').scrollator({
+			zIndex: '2'
+		});
 		}, 0);
 		$scope.$on('$destroy', function () {
 			$('.groepsgenoten .content').data('scrollator').destroy();
@@ -194,6 +198,63 @@ app.controller('contact', function ($scope, $location) {
 	$scope.$parent.activePage = 'contact';
 
 	//TODO: Implement
+});
+app.controller('chat', function ($scope) {
+	$scope.gesprekken = [
+		{
+			naam: 'Clown Bassie',
+			online: false,
+			closed: true,
+			berichten: [
+			]
+		},
+		{
+			naam: 'Milou Timmerman',
+			online: true,
+			closed: false,
+			berichten: [
+				{
+					zender: 'Milou Timmerman',
+					zenderFoto: 'img/demilou.jpg',
+					bericht: 'Hoi!'
+				},
+				{
+					zender: 'Milou Timmerman',
+					zenderFoto: 'img/demilou.jpg',
+					bericht: 'Ik heb een vraag'
+				},
+				{
+					zender: 'Yvonne Geraats',
+					zenderFoto: 'img/hethoofd.jpg',
+					bericht: 'hoihoi'
+				},
+				{
+					zender: 'Yvonne Geraats',
+					zenderFoto: 'img/hethoofd.jpg',
+					bericht: 'tof.'
+				}
+			]
+		}
+	];
+
+	$scope.sendMessage = function (e) {
+		if (e.keyCode == 13) {
+			this.gesprek.berichten.push({
+				zender: 'Yvonne Geraats',
+				zenderFoto: 'img/hethoofd.jpg',
+				bericht: e.target.value
+			});
+			e.target.value = '';
+			e.stopPropagation();
+			e.preventDefault();
+		}
+	};
+
+	$scope.scrollDown = function () {
+		$('.chat-box .content').each(function () {
+			this.scrollTop = this.scrollHeight + 999;
+		});
+	};
 });
 
 app.filter('reverse', function() {
