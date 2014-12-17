@@ -61,6 +61,10 @@ app.controller('main', function ($scope, $location) {
 	$scope.navigateTo = function (pageName) {
 		$location.path('/' + pageName);
 	};
+
+	$(document.body).scrollator({
+		zIndex: '2'
+	});
 });
 app.controller('concept', function ($scope, $location) {
 	$scope.$parent.activePage = 'concept';
@@ -72,12 +76,45 @@ app.controller('expeditie', function ($scope, $location) {
 
 	$scope.opdrachten = [
 		{
+			nr: 1,
 			naam: 'Teamwork',
 			beschrijving: 'Leer je groep kennen door middel van een Project Start Up.'
+		},
+		{
+			nr: 2,
+			naam: 'Gebruikersonderzoek',
+			beschrijving: 'Bestudeer je concept en bepaal een doelgroep.'
+		},
+		{
+			nr: 3,
+			naam: 'Meet the people',
+			beschrijving: 'Ga naar je doelgroep en onderzoek hun behoeften.'
+		},
+		{
+			nr: 4,
+			naam: 'Divergeren',
+			beschrijving: 'Verzamel inspitatie uit onverwachte hoeken. Gebruik de divergatiemethoden.'
+		},
+		{
+			nr: 5,
+			naam: 'Survivor',
+			beschrijving: 'Kies het beste idee aan de hand van één of meerdere convergatiemethodes.'
+		},
+		{
+			nr: 6,
+			naam: 'Build, test, repeat',
+			beschrijving: 'Maak je eerste versie van het idee, test het en maak één of meerdere verbeterslagen.'
+		},
+		{
+			nr: 7,
+			naam: 'Eindpresentatie',
+			beschrijving: 'Overtuig de jury dat jullie het gouden ei hebben gevonden.'
 		}
 	];
 
-	//TODO: Implement
+	$scope.applyScrollbar = function () {
+		$(document.body).data('scrollator').refresh();
+	};
 });
 app.controller('groepsgenoten', function ($scope) {
 	$scope.$parent.activePage = 'groepsgenoten';
@@ -135,17 +172,17 @@ app.controller('groepsgenoten', function ($scope) {
 		}
 	];
 
-	var ns = $('.groepsgenoten .content').getNiceScroll();
-	if (ns.length) {
-		ns.show();
-	} else {
-		$('.groepsgenoten .content').niceScroll({
-			autohidemode: false
+	$scope.applyScrollbar = function () {
+		// Wacht op de eerstvolgende frame: dan is pas de daadwerkelijke grote bekend
+		setTimeout(function () {
+		$('.groepsgenoten .content').scrollator({
+			zIndex: '2'
 		});
+		}, 0);
 		$scope.$on('$destroy', function () {
-			$('.groepsgenoten .content').getNiceScroll().hide();
+			$('.groepsgenoten .content').data('scrollator').destroy();
 		});
-	}
+	};
 });
 app.controller('planning', function ($scope, $location) {
 	$scope.$parent.activePage = 'planning';
@@ -161,4 +198,75 @@ app.controller('contact', function ($scope, $location) {
 	$scope.$parent.activePage = 'contact';
 
 	//TODO: Implement
+});
+app.controller('chat', function ($scope) {
+	$scope.gesprekken = [
+		{
+			naam: 'Clown Bassie',
+			online: false,
+			closed: true,
+			berichten: [
+			]
+		},
+		{
+			naam: 'Milou Timmerman',
+			online: true,
+			closed: false,
+			berichten: [
+				{
+					zender: 'Milou Timmerman',
+					zenderFoto: 'img/demilou.jpg',
+					bericht: 'Hoi!'
+				},
+				{
+					zender: 'Milou Timmerman',
+					zenderFoto: 'img/demilou.jpg',
+					bericht: 'Ik heb een vraag'
+				},
+				{
+					zender: 'Yvonne Geraats',
+					zenderFoto: 'img/hethoofd.jpg',
+					bericht: 'hoihoi'
+				},
+				{
+					zender: 'Yvonne Geraats',
+					zenderFoto: 'img/hethoofd.jpg',
+					bericht: 'tof.'
+				}
+			]
+		}
+	];
+
+	$scope.sendMessage = function (e) {
+		if (e.keyCode == 13) {
+			this.gesprek.berichten.push({
+				zender: 'Yvonne Geraats',
+				zenderFoto: 'img/hethoofd.jpg',
+				bericht: e.target.value
+			});
+			e.target.value = '';
+			e.stopPropagation();
+			e.preventDefault();
+		}
+	};
+
+	$scope.scrollDown = function () {
+		$('.chat-box .content').each(function () {
+			this.scrollTop = this.scrollHeight + 999;
+		});
+	};
+});
+
+app.filter('reverse', function() {
+	return function(items) {
+		return items.slice().reverse();
+	};
+});
+
+app.directive('repeatDone', function() {
+	return function(scope, element, attrs) {
+		if (scope.$last) { // all are rendered
+			scope.$eval(attrs.repeatDone);
+		}
+	}
 });

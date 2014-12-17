@@ -17,7 +17,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-cookies.js"></script>
     <script src="js/mediaelement/mediaelement-and-player.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/fm.scrollator.min.js"></script>
     <link rel="stylesheet" href="js/mediaelement/mediaelementplayer.css"/>
     <script src="js/expeditie.js"></script>
     <link rel="stylesheet" href="css/default.css">
@@ -27,15 +27,13 @@
 <body ng-controller="main">
 
 <div class="container">
+    <ng-include src="'templates/expeditie/navigatie.html'"></ng-include>
+
     <ng-include src="'templates/expeditie/profile.html'"></ng-include>
 
     <div ng-view></div>
 
-    <nav role="navigation">
-        <ul class="nav navbar-nav container">
-            <li class="col-md-2" ng-class="{active: activePage == item.name.toLowerCase()}" ng-repeat="item in menu" ng-click="navigateTo(item.name.toLowerCase())"><i class="fa {{item.icon}}"></i>{{item.name}}</li>
-        </ul>
-    </nav>
+    <ng-include src="'templates/expeditie/chat.html'"></ng-include>
 </div>
 
 </body>

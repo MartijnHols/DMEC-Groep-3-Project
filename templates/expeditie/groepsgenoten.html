@@ -1,7 +1,7 @@
 <div class="box col-lg-8 col-md-10 col-sm-12 col-xs-12 groepsgenoten">
     <div class="title">Groepsgenoten</div>
     <div class="content row">
-        <div ng-repeat="groepsgenoot in groepsgenoten" class="groepsgenoot col-md-6">
+        <div ng-repeat="groepsgenoot in groepsgenoten" class="groepsgenoot col-md-6" repeat-done="applyScrollbar()">
             <img ng-src="{{groepsgenoot.foto}}">
 
             <div class="naam">{{groepsgenoot.naam}}</div>
