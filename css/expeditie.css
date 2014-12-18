@@ -42,7 +42,7 @@ nav {
     bottom: 0;
     width: 100%;
     left: 0;
-    background: #252525;
+    background: #151a1f;
     height: 72px;
     border-top: 2px solid #fff;
     border-bottom: 1px solid #000;
@@ -64,10 +64,10 @@ nav ul li {
     cursor: pointer;
 }
 nav ul li.active {
-    background: #000;
+    background: #0c0f12;
 }
 nav ul li:hover {
-    background: #131313;
+    background: #20262b;
 }
 nav ul li i.fa {
     display: block;

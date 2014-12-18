@@ -202,9 +202,9 @@ app.controller('groepsgenoten', function ($scope) {
 	$scope.applyScrollbar = function () {
 		// Wacht op de eerstvolgende frame: dan is pas de daadwerkelijke grote bekend
 		setTimeout(function () {
-		$('.groepsgenoten .content').scrollator({
-			zIndex: '2'
-		});
+			$('.groepsgenoten .content').scrollator({
+				zIndex: '2'
+			});
 		}, 0);
 		$scope.$on('$destroy', function () {
 			$('.groepsgenoten .content').data('scrollator').destroy();
@@ -280,6 +280,87 @@ app.controller('chat', function ($scope) {
 	$scope.scrollDown = function () {
 		$('.chat-box .content').each(function () {
 			this.scrollTop = this.scrollHeight + 999;
+		});
+	};
+
+	$scope.users = [
+		{
+			naam: 'Yvonne Geraats',
+			opleiding: 'Geneeskunde',
+			foto: 'img/hethoofd.jpg',
+			online: true
+		},
+		{
+			naam: 'Coen Calkhoven',
+			opleiding: 'Biomedische Wetenschappen',
+			foto: 'img/hetcoen.jpg',
+			online: true
+		},
+		{
+			naam: 'Johan Vermeer',
+			opleiding: 'Geneeskunde',
+			foto: 'img/isdwayne.jpg',
+			online: true
+		},
+		{
+			naam: 'Anne Groot',
+			opleiding: 'Biomedische Wetenschappen',
+			foto: 'img/demilou.jpg',
+			online: true
+		},
+		{
+			naam: 'Suzan Roden',
+			opleiding: 'Geneeskunde',
+			foto: 'img/hetcoen.jpg',
+			online: true
+		},
+		{
+			naam: 'Jan Veenema',
+			opleiding: 'Geneeskunde',
+			foto: 'img/isdwayne.jpg',
+			online: true
+		},
+		{
+			naam: 'Carmen Gerritsen',
+			opleiding: 'Geneeskunde',
+			foto: 'img/demilou.jpg',
+			online: true
+		},
+		{
+			naam: 'Martijn Hols',
+			opleiding: 'Biomedische Wetenschappen',
+			foto: 'img/ik.jpg',
+			online: true
+		},
+		{
+			naam: 'Martijn Hols',
+			opleiding: 'Biomedische Wetenschappen',
+			foto: 'img/ik.jpg',
+			online: true
+		},
+		{
+			naam: 'Martijn Hols',
+			opleiding: 'Biomedische Wetenschappen',
+			foto: 'img/ik.jpg',
+			online: true
+		},
+		{
+			naam: 'Martijn Hols',
+			opleiding: 'Biomedische Wetenschappen',
+			foto: 'img/ik.jpg',
+			online: true
+		}
+	];
+
+	$scope.applyScrollbar = function () {
+		// Wacht op de eerstvolgende frame: dan is pas de daadwerkelijke grote bekend
+		setTimeout(function () {
+			$('.chat-menu .users').scrollator({
+				zIndex: '2'
+			});
+		}, 0);
+		$scope.$on('$destroy', function () {
+			$('.chat-menu .users').scrollator('destroy');
 		});
 	};
 });

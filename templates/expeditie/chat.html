@@ -17,16 +17,140 @@
             <i class="fa fa-smile-o"></i>
         </div>
     </div>
+
+    <div class="chat-menu">
+        <div class="toggler"><i class="fa fa-angle-double-down"></i></div>
+        <div class="users">
+            <ul>
+                <li ng-repeat="user in users" repeat-done="applyScrollbar()">
+                    <img ng-src="{{user.foto}}">
+                    <i class="status" ng-class="{online: user.online,offline: !user.online}"></i>
+                    <div class="naam">{{user.naam}}</div>
+                    <div class="opleiding">{{user.opleiding}}</div>
+                </li>
+            </ul>
+        </div>
+        <div class="zoeken">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Zoeken...">
+        </div>
+    </div>
 </div>
 <style type="text/css">
+.chat-menu {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    bottom: 70px;
+    width: 280px;
+    background: rgba(188, 197, 186, .6);
+}
+.chat-menu .toggler {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+.chat-menu .toggler:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+
+    border-top: 50px solid #00b6d6;
+}
+.chat-menu .users {
+    position: absolute;
+    top: 50px;
+    bottom: 33px;
+    width: 100%;
+    overflow: auto;
+}
+.chat-menu .users ul {
+    list-style: none;
+    padding: 0;
+}
+.chat-menu .users li {
+    clear: both;
+    padding: 15px;
+}
+.chat-menu .users li img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin: 4px;
+    margin-right: 19px;
+}
+.chat-menu .users li .naam {
+    padding-top: 10px;
+    font-size: 18px;
+    line-height: 1em;
+}
+.chat-menu .users li .opleiding {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.chat-menu .users li .status {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-top: 10px;
+    float: right;
+}
+.chat-menu .users li .status.online {
+    background: #03dd00;
+}
+.chat-menu .users li .status.offline {
+    background: red;
+}
+.chat-menu .zoeken {
+    position: absolute;
+    bottom: 0;
+    height: 33px;
+    width: 100%;
+    background: #fff;
+    font-size: 24px;
+}
+.chat-menu .zoeken i {
+    float: left;
+    color: #00b6d6;
+    margin: 4px 10px;
+}
+.chat-menu .zoeken input {
+    border: 0;
+    font-size: 18px;
+    width: 80%;
+    line-height: 28px;
+    padding: 0;
+}
+
+
+
+
 .chat-box {
     position: fixed;
+    z-index: 10;
     bottom: 70px;
-    right: 0;
+    right: 290px;
     width: 240px;
 }
 .chat-box:nth-child(2) {
-    right: 250px;
+    right: 540px;
 }
 .chat-box.closed .title {
     background: #6d6968;
