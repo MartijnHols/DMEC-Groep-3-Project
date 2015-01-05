@@ -26,7 +26,6 @@
                     <img ng-src="{{user.foto}}">
                     <i class="status" ng-class="{online: user.online,offline: !user.online}"></i>
                     <div class="naam">{{user.naam}}</div>
-                    <div class="opleiding">{{user.opleiding}}</div>
                 </li>
             </ul>
         </div>
@@ -43,7 +42,7 @@
     right: 0;
     top: 0;
     bottom: 70px;
-    width: 280px;
+    width: 200px;
     background: rgba(188, 197, 186, .6);
 }
 .chat-menu .toggler {
@@ -81,11 +80,11 @@
 }
 .chat-menu .users li {
     clear: both;
-    padding: 15px;
+    padding: 5px 15px;
 }
 .chat-menu .users li img {
-    width: 48px;
-    height: 48px;
+    width: 38px;
+    height: 38px;
     float: left;
     border-radius: 50%;
     border: 2px solid #fff;
@@ -94,7 +93,7 @@
 }
 .chat-menu .users li .naam {
     padding-top: 10px;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1em;
 }
 .chat-menu .users li .opleiding {
@@ -134,13 +133,10 @@
 .chat-menu .zoeken input {
     border: 0;
     font-size: 18px;
-    width: 80%;
+    width: 60%;
     line-height: 28px;
     padding: 0;
 }
-
-
-
 
 .chat-box {
     position: fixed;
