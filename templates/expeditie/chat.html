@@ -22,7 +22,7 @@
         <div class="toggler"><i class="fa fa-angle-double-down"></i></div>
         <div class="users">
             <ul>
-                <li ng-repeat="user in users | filter:search" repeat-done="applyScrollbar()">
+                <li ng-repeat="user in users" repeat-done="applyScrollbar()">
                     <img ng-src="{{user.foto}}">
                     <i class="status" ng-class="{online: user.online,offline: !user.online}"></i>
                     <div class="naam">{{user.naam}}</div>
@@ -31,7 +31,7 @@
         </div>
         <div class="zoeken">
             <i class="fa fa-search"></i>
-            <input ng-model="search" type="text" placeholder="Zoeken...">
+            <input type="text" placeholder="Zoeken...">
         </div>
     </div>
 </div>
@@ -142,11 +142,11 @@
     position: fixed;
     z-index: 10;
     bottom: 70px;
-    right: 290px;
+    right: 210px;
     width: 240px;
 }
 .chat-box:nth-child(2) {
-    right: 540px;
+    right: 460px;
 }
 .chat-box.closed .title {
     background: #6d6968;

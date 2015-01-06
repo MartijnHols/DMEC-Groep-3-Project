@@ -25,21 +25,14 @@
     <link rel="stylesheet" href="css/expeditie.css">
 </head>
 
-<body ng-controller="main" style="background-image: url('img/bgs/1.jpg');">
-
-<!--<div class="backgrounds">-->
-    <!--<div style="background-image:url({{item}});" ng-repeat="item in achtergronden"-->
-         <!--data-anchor-target="#opdracht{{$index}}"-->
-         <!--data-bottom-top="top: 100vh;" data-top="opacity: 1; top: 0vh;" data-top-bottom="opacity:0;"-->
-         <!--repeat-done="applySkrollr()"></div>-->
-<!--</div>-->
+<body ng-controller="main" style="background-image: url({{achtergrond}});">
 
 <div class="container">
     <ng-include src="'templates/expeditie/navigatie.html'"></ng-include>
 
     <ng-include src="'templates/expeditie/profile.html'"></ng-include>
 
-    <div ng-view></div>
+    <div ng-view onload="fixScrollbar()"></div>
 
     <ng-include src="'templates/expeditie/chat.html'"></ng-include>
 </div>

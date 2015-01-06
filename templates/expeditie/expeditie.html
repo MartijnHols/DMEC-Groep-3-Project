@@ -1,14 +1,19 @@
-<div class="page" ng-repeat="item in opdrachten | reverse" repeat-done="applyScrollbar()" id="opdracht{{$index}}">
-    <div class="box col-lg-8 col-md-10 col-sm-12 col-xs-12 opdracht" data-bottom-top="top: 20px;" data-center="top: 0px;" data-top-bottom="top: -20px;">
-        <div class="title">{{item.nr}}. {{item.naam}}</div>
-        <div class="content row">
-        </div>
-        <div class="beschrijving">{{item.beschrijving}}</div>
+<div class="page" ng-repeat="item in opdrachten | reverse" repeat-done="applySkrollr()" id="opdracht{{$index}}">
+    <div class="opdracht-container"
+            style="background-image:url({{item.achtergrond}});"
+            data-anchor-target="#opdracht{{$index}}"
+            data-bottom-top="top: 100vh;" data-top="opacity: 1; top: 0vh;" data-top-bottom="opacity:0;">
+        <div class="box col-lg-8 col-md-10 col-sm-12 col-xs-12 opdracht" data-bottom-top="top: 20px;" data-center="top: 0px;" data-top-bottom="top: -20px;">
+            <div class="title">{{item.nr}}. {{item.naam}}</div>
+            <div class="content row">
+            </div>
+            <div class="beschrijving">{{item.beschrijving}}</div>
 
-        <div class="buttons">
-            <div><i class="fa fa-question"></i></div>
-            <div><i class="fa fa-file-text"></i></div>
-            <div><i class="fa fa-upload"></i></div>
+            <div class="buttons">
+                <div><i class="fa fa-question"></i></div>
+                <div><i class="fa fa-file-text"></i></div>
+                <div><i class="fa fa-upload"></i></div>
+            </div>
         </div>
     </div>
 </div>

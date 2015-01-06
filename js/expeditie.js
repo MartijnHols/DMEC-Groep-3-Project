@@ -59,9 +59,7 @@ app.controller('main', function ($scope, $location) {
 		}
 	];
 
-	$scope.achtergronden = [
-		'img/bgs/1.jpg'
-	];
+	$scope.achtergrond = 'img/bgs/1.jpg';
 
 	$scope.navigateTo = function (pageName) {
 		$location.path('/' + pageName);
@@ -77,10 +75,22 @@ app.controller('main', function ($scope, $location) {
 		}, 200);
 	};
 
-	//$(document.body).scrollator({
-	//	zIndex: '2'
-	//});
+	$(document.body).scrollator({
+		zIndex: '2'
+	});
+
+	$scope.fixScrollbar = function () {
+		document.body.scrollTop = 0;
+		$(document.body).scrollator('refresh');
+	};
 });
+function setAchtergrond($scope, achtergrond) {
+	$scope.$parent.oldAchtergrond = $scope.$parent.oldAchtergrond || $scope.$parent.achtergrond;
+	$scope.$parent.achtergrond = achtergrond;
+	$scope.$on('$destroy', function () {
+		$scope.$parent.achtergrond = $scope.$parent.oldAchtergrond;
+	});
+}
 app.controller('concept', function ($scope, $location) {
 	$scope.$parent.activePage = 'concept';
 
@@ -89,14 +99,7 @@ app.controller('concept', function ($scope, $location) {
 app.controller('expeditie', function ($scope, $location) {
 	$scope.$parent.activePage = 'expeditie';
 
-	$scope.$parent.achtergronden = [
-		'img/bgs/1.jpg',
-		'img/bgs/2.jpg',
-		'img/bgs/3.jpg',
-		'img/bgs/4.jpg',
-		'img/bgs/5.jpg',
-		'img/bgs/6.jpg'
-	];
+	setAchtergrond($scope, '');
 
 	$scope.opdrachten = [
 		{
@@ -119,29 +122,29 @@ app.controller('expeditie', function ($scope, $location) {
 		},
 		{
 			nr: 4,
+			achtergrond: 'img/bgs/4.jpg',
 			naam: 'Divergeren',
 			beschrijving: 'Verzamel inspitatie uit onverwachte hoeken. Gebruik de divergatiemethoden.'
 		},
 		{
 			nr: 5,
+			achtergrond: 'img/bgs/5.jpg',
 			naam: 'Survivor',
 			beschrijving: 'Kies het beste idee aan de hand van één of meerdere convergatiemethodes.'
 		},
 		{
 			nr: 6,
+			achtergrond: 'img/bgs/6.jpg',
 			naam: 'Build, test, repeat',
 			beschrijving: 'Maak je eerste versie van het idee, test het en maak één of meerdere verbeterslagen.'
 		},
 		{
 			nr: 7,
+			achtergrond: 'img/bgs/7.jpg',
 			naam: 'Eindpresentatie',
 			beschrijving: 'Overtuig de jury dat jullie het gouden ei hebben gevonden.'
 		}
 	];
-
-	$scope.applyScrollbar = function () {
-		//$(document.body).data('scrollator').refresh();
-	};
 });
 app.controller('groepsgenoten', function ($scope) {
 	$scope.$parent.activePage = 'groepsgenoten';
