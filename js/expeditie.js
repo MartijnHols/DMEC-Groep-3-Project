@@ -229,36 +229,14 @@ app.controller('contact', function ($scope, $location) {
 app.controller('chat', function ($scope) {
 	$scope.gesprekken = [
 		{
-			naam: 'Clown Bassie',
-			online: false,
-			closed: true,
-			berichten: [
-			]
-		},
-		{
 			naam: 'Milou Timmerman',
 			online: true,
-			closed: false,
+			closed: true,
 			berichten: [
 				{
 					zender: 'Milou Timmerman',
 					zenderFoto: 'img/demilou.jpg',
-					bericht: 'Hoi!'
-				},
-				{
-					zender: 'Milou Timmerman',
-					zenderFoto: 'img/demilou.jpg',
-					bericht: 'Ik heb een vraag'
-				},
-				{
-					zender: 'Yvonne Geraats',
-					zenderFoto: 'img/hethoofd.jpg',
-					bericht: 'hoihoi'
-				},
-				{
-					zender: 'Yvonne Geraats',
-					zenderFoto: 'img/hethoofd.jpg',
-					bericht: 'tof.'
+					bericht: 'Zullen we vandaag aan ons project werken?'
 				}
 			]
 		}
@@ -333,22 +311,10 @@ app.controller('chat', function ($scope) {
 			online: true
 		},
 		{
-			naam: 'Martijn Hols',
+			naam: 'Hans Mathijssen',
 			opleiding: 'Biomedische Wetenschappen',
-			foto: 'img/ik.jpg',
-			online: true
-		},
-		{
-			naam: 'Martijn Hols',
-			opleiding: 'Biomedische Wetenschappen',
-			foto: 'img/ik.jpg',
-			online: true
-		},
-		{
-			naam: 'Martijn Hols',
-			opleiding: 'Biomedische Wetenschappen',
-			foto: 'img/ik.jpg',
-			online: true
+			foto: 'img/isdwayne.jpg',
+			online: false
 		}
 	];
 
