@@ -152,7 +152,7 @@ nav ul li i.fa {
     width: 100%;
     text-align: center;
 }
-.box .buttons div {
+.box .buttons > * {
     display: inline-block;
     position: relative;
     background: #242424;
@@ -164,7 +164,7 @@ nav ul li i.fa {
     font-size: 40px;
     margin: 15px;
 }
-.box .buttons div:before {
+.box .buttons > *:before {
     content: '';
     position: absolute;
     z-index: -1;
