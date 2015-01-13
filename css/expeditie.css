@@ -93,6 +93,16 @@ nav ul li i.fa {
 .profile .opleiding {
     font-size: 18px;
 }
+.logo {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 250px;
+}
+.logo img {
+    position: fixed;
+}
 .groepsgenoot img {
     width: 84px;
     height: 84px;
