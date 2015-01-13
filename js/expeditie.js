@@ -123,24 +123,30 @@ app.controller('expeditie', function ($scope, $location) {
 		{
 			nr: 4,
 			achtergrond: 'img/bgs/4.jpg',
-			naam: 'Divergeren',
-			beschrijving: 'Verzamel inspitatie uit onverwachte hoeken. Gebruik de divergatiemethoden.'
+			naam: 'What\'s the problem?',
+			beschrijving: 'Is de gestelde probleemstelling ook echt het probleem? Ga na of je probleemstelling nog klopt en pas hem aan.'
 		},
 		{
 			nr: 5,
 			achtergrond: 'img/bgs/5.jpg',
-			naam: 'Survivor',
-			beschrijving: 'Kies het beste idee aan de hand van één of meerdere convergatiemethodes.'
+			naam: 'Divergeren',
+			beschrijving: 'Verzamel inspitatie uit onverwachte hoeken. Gebruik de divergatiemethoden.'
 		},
 		{
 			nr: 6,
 			achtergrond: 'img/bgs/6.jpg',
-			naam: 'Build, test, repeat',
-			beschrijving: 'Maak je eerste versie van het idee, test het en maak één of meerdere verbeterslagen.'
+			naam: 'Survivor',
+			beschrijving: 'Kies het beste idee aan de hand van één of meerdere convergatiemethodes.'
 		},
 		{
 			nr: 7,
 			achtergrond: 'img/bgs/7.jpg',
+			naam: 'Build, test, repeat',
+			beschrijving: 'Maak je eerste versie van het idee, test het en maak één of meerdere verbeterslagen.'
+		},
+		{
+			nr: 8,
+			achtergrond: 'img/bgs/8.jpg',
 			naam: 'Eindpresentatie',
 			beschrijving: 'Overtuig de jury dat jullie het gouden ei hebben gevonden.'
 		}
