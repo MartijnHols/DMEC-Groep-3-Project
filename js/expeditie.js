@@ -151,6 +151,12 @@ app.controller('expeditie', function ($scope, $location) {
 			beschrijving: 'Overtuig de jury dat jullie het gouden ei hebben gevonden.'
 		}
 	];
+
+	$scope.nextOpdracht = function () {
+		$('html,body').stop(true).animate({
+			scrollTop: Math.ceil((document.body.scrollTop + 1) / $('.page').height()) * $('.page').height()
+		}, 1000, 'swing');
+	};
 });
 app.controller('groepsgenoten', function ($scope) {
 	$scope.$parent.activePage = 'groepsgenoten';
