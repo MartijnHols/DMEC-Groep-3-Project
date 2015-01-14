@@ -120,7 +120,7 @@ nav ul li i.fa {
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.8);
-    color: #000;
+    color: #0c0f12;
 }
 .box:before {
     content: '';
@@ -217,7 +217,6 @@ nav ul li i.fa {
 .edit-link-concept {
     font-size: 35px;
     padding:10px 0;
-    color:#000;
 }
 
 .plus-icon {
@@ -239,7 +238,7 @@ nav ul li i.fa {
 a.list-group-item {
     line-height: 0px;
     font-size: 20px;
-    color:#000;
+    color: inherit;
     padding: 15px 15px;
     margin:0 0 2px 0;
 }
