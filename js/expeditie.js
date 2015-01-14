@@ -86,7 +86,15 @@ function setAchtergrond($scope, achtergrond) {
 app.controller('project', function ($scope, $location) {
 	$scope.$parent.activePage = 'project';
 
-	//TODO: Implement
+	// Wacht op de eerstvolgende frame: dan is pas de daadwerkelijke grote bekend
+	setTimeout(function () {
+		$('.project .content').scrollator({
+			zIndex: '2'
+		});
+	}, 0);
+	$scope.$on('$destroy', function () {
+		$('.project .content').data('scrollator').destroy();
+	});
 });
 app.controller('expeditie', function ($scope, $location) {
 	$scope.$parent.activePage = 'expeditie';
