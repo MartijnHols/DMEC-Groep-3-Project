@@ -2,9 +2,9 @@ var app = angular.module('expeditie', ['ngRoute', 'ngSanitize', 'ngCookies']);
 
 app.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider
-		.when('/concept', {
-			templateUrl: 'templates/expeditie/concept.html',
-			controller: 'concept'
+		.when('/project', {
+			templateUrl: 'templates/expeditie/project.html',
+			controller: 'project'
 		})
 		.when('/expeditie', {
 			templateUrl: 'templates/expeditie/expeditie.html',
@@ -22,12 +22,8 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: 'templates/expeditie/documenten.html',
 			controller: 'documenten'
 		})
-		.when('/contact', {
-			templateUrl: 'templates/expeditie/contact.html',
-			controller: 'contact'
-		})
 		.otherwise({
-			redirectTo: '/concept'
+			redirectTo: '/project'
 		});
 }]);
 
@@ -35,7 +31,7 @@ app.controller('main', function ($scope, $location) {
 	$scope.menu = [
 		{
 			icon: 'fa-lightbulb-o',
-			name: 'Concept'
+			name: 'Project'
 		},
 		{
 			icon: 'fa-compass',
@@ -52,10 +48,6 @@ app.controller('main', function ($scope, $location) {
 		{
 			icon: 'fa-file-text',
 			name: 'Documenten'
-		},
-		{
-			icon: 'fa-wechat',
-			name: 'Contact'
 		}
 	];
 
@@ -91,8 +83,8 @@ function setAchtergrond($scope, achtergrond) {
 		$scope.$parent.achtergrond = $scope.$parent.oldAchtergrond;
 	});
 }
-app.controller('concept', function ($scope, $location) {
-	$scope.$parent.activePage = 'concept';
+app.controller('project', function ($scope, $location) {
+	$scope.$parent.activePage = 'project';
 
 	//TODO: Implement
 });
@@ -106,37 +98,43 @@ app.controller('expeditie', function ($scope, $location) {
 			nr: 1,
 			achtergrond: 'img/bgs/1.jpg',
 			naam: 'Teamwork',
-			beschrijving: 'Leer je groep kennen door middel van een Project Start Up.'
+			beschrijving: 'Leer je groep kennen door middel van een Project Start Up.',
+			goedgekeurd: true
 		},
 		{
 			nr: 2,
 			achtergrond: 'img/bgs/2.jpg',
 			naam: 'Gebruikersonderzoek',
-			beschrijving: 'Bestudeer je concept en bepaal een doelgroep.'
+			beschrijving: 'Bestudeer je probleemstelling en bepaal een doelgroep.',
+			goedgekeurd: true
 		},
 		{
 			nr: 3,
 			achtergrond: 'img/bgs/3.jpg',
 			naam: 'Meet the people',
-			beschrijving: 'Ga naar je doelgroep en onderzoek hun behoeften.'
+			beschrijving: 'Ga naar je doelgroep en onderzoek hun behoeften.',
+			goedgekeurd: true
 		},
 		{
 			nr: 4,
 			achtergrond: 'img/bgs/4.jpg',
 			naam: 'What\'s the problem?',
-			beschrijving: 'Is de gestelde probleemstelling ook echt het probleem? Ga na of je probleemstelling nog klopt en pas hem aan.'
+			beschrijving: 'Is de gestelde probleemstelling ook echt het probleem? Ga na of je probleemstelling nog klopt en pas hem aan.',
+			goedgekeurd: true
 		},
 		{
 			nr: 5,
 			achtergrond: 'img/bgs/5.jpg',
 			naam: 'Divergeren',
-			beschrijving: 'Verzamel inspitatie uit onverwachte hoeken. Gebruik de divergatiemethoden.'
+			beschrijving: 'Verzamel inspitatie uit onverwachte hoeken. Gebruik de divergatiemethoden.',
+			goedgekeurd: true
 		},
 		{
 			nr: 6,
 			achtergrond: 'img/bgs/6.jpg',
 			naam: 'Survivor',
-			beschrijving: 'Kies het beste idee aan de hand van één of meerdere convergatiemethodes.'
+			beschrijving: 'Kies het beste idee aan de hand van één of meerdere convergatiemethodes.',
+			goedgekeurd: true
 		},
 		{
 			nr: 7,
